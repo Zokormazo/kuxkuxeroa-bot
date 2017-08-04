@@ -17,11 +17,6 @@ if mongodb_uri == None:
     print("mongodb uri is mandatory")
     sys.exit(1)
 
-log_path = os.environ.get("KUXKUXEROA_LOG_PATH", "./logs")
-
-if not os.path.exists(log_path):
-    os.makedirs(log_path)
-
 client = MongoClient(mongodb_uri)
 db = client.get_default_database()
 
